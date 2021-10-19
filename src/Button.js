@@ -43,7 +43,6 @@ export default function Button({seconds,setSeconds,paused,setPaused}) {
             <button onClick={minus}> {"minus"}</button>
             <button onClick={pause}> {"pause/start"} </button>
             <button onClick={reset}> {"reset"}</button>
-
         </div>
         </>
     )
