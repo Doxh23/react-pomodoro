@@ -1,16 +1,18 @@
 import React,{useState,useEffect} from 'react'
 
 export default function Button({seconds,setSeconds,paused,setPaused}) {
+    
     if(paused === true && seconds>1){
     useEffect(() => setTimeout(()=> setSeconds(seconds - 0.1),100
    ),[seconds])}
    else{
        setPaused(false)
+       
    }
 
     function add() {
         if(paused === false){
-        setSeconds(seconds + 60)
+        setSeconds(seconds +60)
         }
     }
     function minus() {
@@ -39,10 +41,10 @@ export default function Button({seconds,setSeconds,paused,setPaused}) {
     return (
         <>
         <div className="button-section">
-            <button onClick={add}> {"plus"}</button>
-            <button onClick={minus}> {"minus"}</button>
-            <button onClick={pause}> {"pause/start"} </button>
-            <button onClick={reset}> {"reset"}</button>
+            <button className="button-modif" onClick={add}> {"plus"}</button>
+            <button className="button-modif" onClick={minus}> {"minus"}</button>
+            <button className="button-modif" onClick={pause}> {"pause"} {"start"} </button>
+            <button className="button-modif" onClick={reset}> {"reset"}</button>
         </div>
         </>
     )
