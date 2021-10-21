@@ -3,6 +3,7 @@ import React,{useEffect,useState} from 'react'
 export default function Counter({seconds,paused}) {
     const min = Math.floor((seconds /60))
     seconds = Math.floor((seconds % 60))
+  
 
     const sec = seconds
     return (

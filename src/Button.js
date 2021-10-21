@@ -1,24 +1,28 @@
 import React,{useState,useEffect} from 'react'
 
-export default function Button({seconds,setSeconds,paused,setPaused}) {
+export default function Button({seconds,setSeconds,paused,setPaused,savesec,setsavesec,div}) {
     
     if(paused === true && seconds>1){
     useEffect(() => setTimeout(()=> setSeconds(seconds - 0.1),100
    ),[seconds])}
-   else{
-       setPaused(false)
+   else if (savesec != 0 && Math.floor(seconds) == 0){
+   div.current.style.display = "flex"
+useEffect(()=> setPaused(false),[Math.floor(seconds)])
        
+    
    }
+  
 
     function add() {
         if(paused === false){
         setSeconds(seconds +60)
+       setsavesec(savesec +60)
         }
     }
     function minus() {
             if(paused === false && Math.floor(seconds) > 59){
-                console.log(seconds)
                 setSeconds(seconds -60)
+                setsavesec(savesec -60)
             } 
     }
     function pause() {
