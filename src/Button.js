@@ -7,6 +7,8 @@ export default function Button({seconds,setSeconds,paused,setPaused,savesec,sets
    ),[seconds])}
    else if (savesec != 0 && Math.floor(seconds) == 0){
    div.current.style.display = "flex"
+   div.current.style.left = "0"
+   
 useEffect(()=> setPaused(false),[Math.floor(seconds)])
        
     
@@ -15,7 +17,7 @@ useEffect(()=> setPaused(false),[Math.floor(seconds)])
 
     function add() {
         if(paused === false){
-        setSeconds(seconds +60)
+        setSeconds(seconds +5)
        setsavesec(savesec +60)
         }
     }
