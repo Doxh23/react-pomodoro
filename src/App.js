@@ -9,7 +9,7 @@ export default function app() {
    const div = useRef(0)
     return (
        <>
-       <div className="trybox"></div>
+   <div className="trybox"></div>
     <div className="countdown-box">
     <h1>pomodoro</h1>
    <Modal  div={div} setPaused={setPaused} savesec={savesec} setsavesec={setsavesec} setSeconds={setSeconds} />

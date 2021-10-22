@@ -1,5 +1,5 @@
 body {
-  background-image: url("/background.gif");
+  background-image: url("/background.b871fd10.gif");
   background-size: cover;
   height: 100vh;
   display: -webkit-box;
@@ -48,7 +48,7 @@ body {
 
 .button-modif {
   mix-blend-mode: difference;
-  background-image: url("/back-button.jpg") repeat purple;
+  background-image: url("/back-button.7f624248.jpg") repeat purple;
   font-size: 15px;
   width: 80px;
   height: 80px;
@@ -132,4 +132,6 @@ body {
 .restart button:hover {
   background-color: orange;
 }
-/*# sourceMappingURL=app.css.map */
+
+
+/*# sourceMappingURL=/src.e31bb0bc.css.map */

@@ -17,7 +17,7 @@ useEffect(()=> setPaused(false),[Math.floor(seconds)])
 
     function add() {
         if(paused === false){
-        setSeconds(seconds +5)
+        setSeconds(seconds +60)
        setsavesec(savesec +60)
         }
     }
