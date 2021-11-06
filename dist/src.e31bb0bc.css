@@ -1,38 +1,61 @@
 body {
-  background-image: url("/background.b871fd10.gif");
-  background-size: cover;
-  height: 100vh;
+  background: #003B4A;
+  color: white;
+  height: 100%;
+}
+
+body header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 10vh;
+  border-bottom: 1px solid white;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-#root {
+body header ul {
+  margin-right: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style-type: none;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body header ul li {
+  margin: 20px 40px;
+  font-size: 25px;
+}
+
+body header ul li button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 50px;
+}
+
+body .projects {
+  width: 80%;
+  margin: auto;
+  margin-top: 100px;
+}
+
+body .projects .project {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: white;
-  font-size: 70px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: auto;
-  width: 60%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.countdown-box {
-  mix-blend-mode: difference;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -40,57 +63,39 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 80%;
+  height: 500px;
+  margin: auto;
+  margin: 80px auto;
+  border: 1px solid grey;
+  border-radius: 25px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.countdown-box p {
-  font-size: 100px;
-}
-
-.button-modif {
-  mix-blend-mode: difference;
-  background-image: url("/back-button.7f624248.jpg") repeat purple;
-  font-size: 15px;
-  width: 80px;
-  height: 80px;
-  margin: 10px 10px 10px 10px;
-  border: none;
-  border-radius: 50%;
-  background-color: grey;
-  -webkit-transition: 0.5s background-color ease-in-out;
-  transition: 0.5s background-color ease-in-out;
-}
-
-.button-modif:hover {
-  background-color: purple;
-  color: black;
-  font-weight: bolder;
-}
-
-.button-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.button-section-none {
-  display: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.restart {
-  background-color: rgba(255, 0, 0, 0.8);
+body .projects .project img {
   position: absolute;
+  display: block;
+  z-index: 2;
   width: 100%;
+  left: 0;
+  overflow: hidden;
   height: 100%;
-  top: 0;
-  left: -150%;
+  border-radius: 25px;
+  opacity: 1;
+  -webkit-transition-delay: 0ms,0ms;
+          transition-delay: 0ms,0ms;
+  -webkit-transition-property: opacity , z-index;
+  transition-property: opacity , z-index;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.5s, 0.5s;
+          transition-duration: 0.5s, 0.5s;
+}
+
+body .projects .project .link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,39 +103,28 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  z-index: 2;
-  -webkit-transition: left 1s ease-in;
-  transition: left 1s ease-in;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
 }
 
-.restart button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-  height: 100px;
-  width: 150px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  background-color: grey;
+body .projects .project:hover > img {
+  opacity: 0;
+  z-index: -1;
+}
+
+body a {
+  text-decoration: none;
+  color: white;
+}
+
+body a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+body a:hover {
   color: black;
-  font-weight: 900;
-  font-size: 25px;
-  border-radius: 20%;
-  -webkit-transition: 0.5s background-color ease-in;
-  transition: 0.5s background-color ease-in;
-}
-
-.restart button:hover {
-  background-color: orange;
 }
 
 
