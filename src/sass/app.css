@@ -1,0 +1,135 @@
+body {
+  background-image: url("/background.gif");
+  background-size: cover;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#root {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-size: 70px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  width: 60%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.countdown-box {
+  mix-blend-mode: difference;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.countdown-box p {
+  font-size: 100px;
+}
+
+.button-modif {
+  mix-blend-mode: difference;
+  background-image: url("/back-button.jpg") repeat purple;
+  font-size: 15px;
+  width: 80px;
+  height: 80px;
+  margin: 10px 10px 10px 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: grey;
+  -webkit-transition: 0.5s background-color ease-in-out;
+  transition: 0.5s background-color ease-in-out;
+}
+
+.button-modif:hover {
+  background-color: purple;
+  color: black;
+  font-weight: bolder;
+}
+
+.button-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.button-section-none {
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.restart {
+  background-color: rgba(255, 0, 0, 0.8);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -150%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 2;
+  -webkit-transition: left 1s ease-in;
+  transition: left 1s ease-in;
+}
+
+.restart button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  height: 100px;
+  width: 150px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: grey;
+  color: black;
+  font-weight: 900;
+  font-size: 25px;
+  border-radius: 20%;
+  -webkit-transition: 0.5s background-color ease-in;
+  transition: 0.5s background-color ease-in;
+}
+
+.restart button:hover {
+  background-color: orange;
+}
+/*# sourceMappingURL=app.css.map */
