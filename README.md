@@ -4,4 +4,4 @@ This is a pomodoro using react
 run the command "npm install" to install modules,
 and then run the command "npm start" to live it in local
 ## link to netifly 
-[pomodoro](https://pomodoro-yld.netlify.app/")
+[pomodoro]("https://pomodoro-yld.netlify.app/")
