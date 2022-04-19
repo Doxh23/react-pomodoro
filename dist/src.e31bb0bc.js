@@ -29587,8 +29587,7 @@ function Button(_ref) {
       setPaused = _ref.setPaused,
       savesec = _ref.savesec,
       setsavesec = _ref.setsavesec,
-      div = _ref.div,
-      circle = _ref.circle;
+      div = _ref.div;
 
   if (paused === true && seconds > 0) {
     (0, _react.useEffect)(function () {
@@ -29597,6 +29596,7 @@ function Button(_ref) {
       }, 1000);
     }, [seconds]);
   } else if (savesec != 0 && Math.floor(seconds) == 0) {
+    div.current.style.left = "0";
     (0, _react.useEffect)(function () {
       return setPaused(false);
     }, [Math.floor(seconds)]);
@@ -29723,14 +29723,14 @@ function Modal(_ref) {
       setsavesec = _ref.setsavesec,
       div = _ref.div;
 
-  function rst() {
-    document.querySelector(".restart").style.display = "none";
+  function reset() {
+    document.querySelector(".restart").style.left = "150%";
     setSeconds(savesec);
     setPaused(true);
   }
 
-  function rstcancel() {
-    document.querySelector(".restart").style.display = "none";
+  function cancel() {
+    document.querySelector(".restart").style.left = "150%";
     setsavesec(0);
   }
 
@@ -29739,9 +29739,9 @@ function Modal(_ref) {
     id: "plz",
     className: "restart"
   }, /*#__PURE__*/_react.default.createElement("button", {
-    onClick: rst
+    onClick: reset
   }, "restart"), /*#__PURE__*/_react.default.createElement("button", {
-    onClick: rstcancel
+    onClick: cancel
   }, "cancel")));
 }
 },{"react":"../node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
@@ -29779,12 +29779,12 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function app() {
-  var _useState = (0, _react.useState)(0),
+  var _useState = (0, _react.useState)(10),
       _useState2 = _slicedToArray(_useState, 2),
       seconds = _useState2[0],
       setSeconds = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(0),
+  var _useState3 = (0, _react.useState)(10),
       _useState4 = _slicedToArray(_useState3, 2),
       savesec = _useState4[0],
       setsavesec = _useState4[1];
@@ -29939,7 +29939,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64252" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57471" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

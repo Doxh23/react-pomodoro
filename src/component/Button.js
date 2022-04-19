@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 
-export default function Button({seconds,setSeconds,paused,setPaused,savesec,setsavesec,div,circle}) {
+export default function Button({seconds,setSeconds,paused,setPaused,savesec,setsavesec,div}) {
     
     if(paused === true && seconds>0){
     useEffect(() => setTimeout(()=> setSeconds(seconds - 1)
@@ -8,6 +8,8 @@ export default function Button({seconds,setSeconds,paused,setPaused,savesec,sets
    )
 ,[seconds])}
    else if (savesec != 0 && Math.floor(seconds) == 0){
+    div.current.style.left = "0"
+
    useEffect(()=> setPaused(false),[Math.floor(seconds)])  
    }
     function add() {

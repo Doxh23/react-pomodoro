@@ -1,13 +1,14 @@
 import React from 'react'
 export default function Modal({setPaused,savesec,setSeconds,setsavesec,div}) {
-function rst(){
-    document.querySelector(".restart").style.display = "none"
+function reset(){
+    document.querySelector(".restart").style.left = "150%"
+
     setSeconds(savesec)
     setPaused(true)
 
 }
-function rstcancel(){
-    document.querySelector(".restart").style.display = "none"
+function cancel(){
+    document.querySelector(".restart").style.left = "150%"
     setsavesec(0)
 
 }
@@ -15,8 +16,8 @@ function rstcancel(){
     return (
         <div >
         <div  ref={div} id="plz" className={"restart"}>
-        <button onClick={rst}>restart</button>
-        <button onClick={rstcancel} >cancel</button>
+        <button onClick={reset}>restart</button>
+        <button onClick={cancel} >cancel</button>
     </div>
         </div>
     )
