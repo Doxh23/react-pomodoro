@@ -1,90 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
-  background-image: url("/background.gif");
-  background-size: cover;
-  height: 100vh;
+  font-family: 'Lobster', cursive;
+  background-color: #1C1C1E;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-#root {
+body .title {
+  color: white;
+  text-align: center;
+  font-size: 100px;
+  margin: 20px;
+}
+
+body .count-box {
+  width: auto;
+  max-width: 300px;
+  margin: auto;
   position: relative;
+}
+
+body .count-box svg {
+  -webkit-transform: scaleX(-1) rotate(-90deg);
+          transform: scaleX(-1) rotate(-90deg);
+}
+
+body .count-box svg .circle {
+  -webkit-transition: stroke-dashoffset 1s ease;
+  transition: stroke-dashoffset 1s ease;
+}
+
+body .count-box .count {
+  font-size: 50px;
+  position: absolute;
+  color: white;
+  top: 40%;
+  left: 30%;
+  text-align: center;
+}
+
+body .button-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: white;
-  font-size: 70px;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: auto;
-  width: 60%;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.countdown-box {
-  mix-blend-mode: difference;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+body .button-section .button-modif {
+  font-family: 'Lobster', cursive;
+  border: 2px solid  whitesmoke;
+  font-size: 12px;
+  font-weight: 900;
+  width: 60px;
+  height: 25px;
+  border-radius: 25px;
+  background: none;
+  -webkit-transition: background-color 1s ease;
+  transition: background-color 1s ease;
+  margin: 15px;
+  color: white;
 }
 
-.countdown-box p {
-  font-size: 100px;
+body .button-section .button-modif:hover {
+  color: #1C1C1E;
+  background-color: whitesmoke;
 }
 
-.button-modif {
-  mix-blend-mode: difference;
-  background-image: url("/back-button.jpg") repeat purple;
-  font-size: 15px;
-  width: 80px;
-  height: 80px;
-  margin: 10px 10px 10px 10px;
-  border: none;
-  border-radius: 50%;
-  background-color: grey;
-  -webkit-transition: 0.5s background-color ease-in-out;
-  transition: 0.5s background-color ease-in-out;
-}
-
-.button-modif:hover {
-  background-color: purple;
-  color: black;
-  font-weight: bolder;
-}
-
-.button-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.button-section-none {
-  display: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.restart {
+body .restart {
   background-color: rgba(255, 0, 0, 0.8);
   position: absolute;
   width: 100%;
@@ -106,7 +109,7 @@ body {
   transition: left 1s ease-in;
 }
 
-.restart button {
+body .restart button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,7 +132,7 @@ body {
   transition: 0.5s background-color ease-in;
 }
 
-.restart button:hover {
+body .restart button:hover {
   background-color: orange;
 }
 /*# sourceMappingURL=app.css.map */

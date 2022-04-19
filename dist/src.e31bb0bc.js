@@ -29566,7 +29566,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"Button.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"component/Button.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29587,17 +29587,16 @@ function Button(_ref) {
       setPaused = _ref.setPaused,
       savesec = _ref.savesec,
       setsavesec = _ref.setsavesec,
-      div = _ref.div;
+      div = _ref.div,
+      circle = _ref.circle;
 
-  if (paused === true && seconds > 1) {
+  if (paused === true && seconds > 0) {
     (0, _react.useEffect)(function () {
       return setTimeout(function () {
-        return setSeconds(seconds - 0.1);
-      }, 100);
+        return setSeconds(seconds - 1);
+      }, 1000);
     }, [seconds]);
   } else if (savesec != 0 && Math.floor(seconds) == 0) {
-    div.current.style.display = "flex";
-    div.current.style.left = "0";
     (0, _react.useEffect)(function () {
       return setPaused(false);
     }, [Math.floor(seconds)]);
@@ -29614,6 +29613,9 @@ function Button(_ref) {
     if (paused === false && Math.floor(seconds) > 59) {
       setSeconds(seconds - 60);
       setsavesec(savesec - 60);
+    } else if (seconds < 59) {
+      setSeconds(0);
+      setsavesec(0);
     }
   }
 
@@ -29630,6 +29632,7 @@ function Button(_ref) {
       setPaused(false);
       setTimeout(function () {
         setSeconds(0);
+        setsavesec(0);
       }, 10);
     }
   }
@@ -29639,18 +29642,18 @@ function Button(_ref) {
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "button-modif",
     onClick: add
-  }, " ", "plus"), /*#__PURE__*/_react.default.createElement("button", {
+  }, " ", "+ 1:00"), /*#__PURE__*/_react.default.createElement("button", {
     className: "button-modif",
     onClick: minus
-  }, " ", "minus"), /*#__PURE__*/_react.default.createElement("button", {
+  }, " ", "- 1:00"), /*#__PURE__*/_react.default.createElement("button", {
     className: "button-modif",
     onClick: pause
-  }, " ", "pause", " ", "start", " "), /*#__PURE__*/_react.default.createElement("button", {
+  }, " ", paused && seconds > 0 ? "break" : "start", " "), /*#__PURE__*/_react.default.createElement("button", {
     className: "button-modif",
     onClick: reset
   }, " ", "reset")));
 }
-},{"react":"../node_modules/react/index.js"}],"Counter.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"component/Counter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29666,15 +29669,42 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 function Counter(_ref) {
   var seconds = _ref.seconds,
+      savesec = _ref.savesec,
+      circle = _ref.circle,
       paused = _ref.paused;
   var min = Math.floor(seconds / 60);
-  seconds = Math.floor(seconds % 60);
-  var sec = seconds;
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", {
-    className: "count"
-  }, min < 10 ? "0".concat(min) : min, ":", sec < 10 ? "0".concat(sec) : sec, " ")));
+  var secondM = Math.floor(seconds % 60);
+  var sec = secondM;
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "count-box"
+  }, /*#__PURE__*/_react.default.createElement("svg", {
+    width: "100%",
+    viewBox: "0 0 300 300"
+  }, /*#__PURE__*/_react.default.createElement("circle", {
+    stroke: "#1C1C1E",
+    fill: "#1C1C1E",
+    strokeWidth: "5",
+    r: "140",
+    cx: "150",
+    cy: "150"
+  }), /*#__PURE__*/_react.default.createElement("circle", {
+    ref: circle,
+    className: "circle",
+    stroke: "white",
+    fill: "transparent",
+    strokeWidth: "5",
+    strokeDasharray: "879.645943005142 879.645943005142",
+    r: "140",
+    cx: "150",
+    cy: "150",
+    style: {
+      strokeDashoffset: 879.645943005142 - 879.645943005142 / savesec * (savesec - seconds)
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: (secondM < 30 && secondM != 0 && paused === true ? "font-color" : "") + " count"
+  }, min < 10 ? "0".concat(min) : min, ":", sec < 10 ? "0".concat(sec) : sec)));
 }
-},{"react":"../node_modules/react/index.js"}],"Modal.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"component/Modal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29724,11 +29754,11 @@ exports.default = app;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _Button = _interopRequireDefault(require("./Button.js"));
+var _Button = _interopRequireDefault(require("./component/Button.js"));
 
-var _Counter = _interopRequireDefault(require("./Counter.js"));
+var _Counter = _interopRequireDefault(require("./component/Counter.js"));
 
-var _Modal = _interopRequireDefault(require("./Modal.js"));
+var _Modal = _interopRequireDefault(require("./component/Modal.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29765,21 +29795,26 @@ function app() {
       setPaused = _useState6[1];
 
   var div = (0, _react.useRef)(0);
+  var circle = (0, _react.useRef)(1);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "trybox"
   }), /*#__PURE__*/_react.default.createElement("div", {
     className: "countdown-box"
-  }, /*#__PURE__*/_react.default.createElement("h1", null, "pomodoro"), /*#__PURE__*/_react.default.createElement(_Modal.default, {
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "title"
+  }, "pomodoro"), /*#__PURE__*/_react.default.createElement(_Modal.default, {
     div: div,
     setPaused: setPaused,
     savesec: savesec,
     setsavesec: setsavesec,
     setSeconds: setSeconds
   }), /*#__PURE__*/_react.default.createElement(_Counter.default, {
+    paused: paused,
+    circle: circle,
     seconds: seconds,
-    savesec: savesec,
-    paused: paused
+    savesec: savesec
   }), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    circle: circle,
     div: div,
     paused: paused,
     setPaused: setPaused,
@@ -29789,7 +29824,7 @@ function app() {
     setSeconds: setSeconds
   })));
 }
-},{"react":"../node_modules/react/index.js","./Button.js":"Button.js","./Counter.js":"Counter.js","./Modal.js":"Modal.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./component/Button.js":"component/Button.js","./component/Counter.js":"component/Counter.js","./component/Modal.js":"component/Modal.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -29861,7 +29896,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"C:\\Users\\Adrien\\Documents\\becode\\react-pomodoro\\src\\background.gif":[["background.b871fd10.gif","background.gif"],"background.gif"],"C:\\Users\\Adrien\\Documents\\becode\\react-pomodoro\\src\\back-button.jpg":[["back-button.7f624248.jpg","back-button.jpg"],"back-button.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -29904,7 +29939,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60129" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64252" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

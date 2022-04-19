@@ -1,55 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body{
-    background-image: url('/background.gif');
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-}
-
-#root{
-position: relative;
-display: flex;
-color: white;
-font-size: 70px ;
-flex-direction: column;
-margin: auto;
-width: 60%;
-justify-content: center;
-}
-.countdown-box{
-    mix-blend-mode: difference;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    p{
+    font-family: 'Lobster', cursive;
+    background-color: #1C1C1E;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+    .title{ 
+        color: white;
+        text-align: center;
         font-size: 100px;
+        margin: 20px;
+    }
+.count-box{
+    width: auto;
+    max-width: 300px;
+    margin: auto;
+    position: relative;
+    svg{
+        transform: scaleX(-1) rotate(-90deg);
+        .circle{
+            transition: stroke-dashoffset 1s ease;
+        }
+    }
+    .count{
+        font-size: 50px;
+        position: absolute;
+        color: white;
+        top: 40%;
+        left: 30%;
+        text-align: center;
     }
 }
-.button-modif {
-    mix-blend-mode: difference;
-    background-image: url('/back-button.jpg') repeat purple;
-    font-size: 15px;
-    width: 80px;
-    height: 80px;
-    margin: 10px 10px 10px 10px;
-    border: none;
-    border-radius: 50%;
-    background-color: grey;
-    transition: 0.5s background-color ease-in-out;
-
-}
-.button-modif:hover {
-    background-color: purple;
-    color: black;
-    font-weight:bolder;
-}
 .button-section{
-    display: flex;
-    flex-direction: row;
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+.button-modif{
+    font-family: 'Lobster', cursive;
+    border: 2px solid  whitesmoke;
+    font-size: 12px;
+    font-weight: 900;
+    width: 60px;
+    height: 25px;
+    border-radius: 25px;
+    background: none;
+    transition: background-color 1s ease;
+    margin: 15px;
+    color: white;
+    &:hover{
+        color: #1C1C1E;
+        background-color: whitesmoke ;
+    }
 }
-.button-section-none{
-    display: none;
-    flex-direction: row;
 }
 .restart{
     background-color: rgba(255, 0, 0,0.8);
@@ -80,5 +88,6 @@ button{
 }
 button:hover {
     background-color: orange ;
+}
 }
 }
