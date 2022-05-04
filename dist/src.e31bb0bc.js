@@ -29779,12 +29779,12 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function app() {
-  var _useState = (0, _react.useState)(10),
+  var _useState = (0, _react.useState)(0),
       _useState2 = _slicedToArray(_useState, 2),
       seconds = _useState2[0],
       setSeconds = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(10),
+  var _useState3 = (0, _react.useState)(0),
       _useState4 = _slicedToArray(_useState3, 2),
       savesec = _useState4[0],
       setsavesec = _useState4[1];
@@ -29939,7 +29939,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57471" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54273" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
