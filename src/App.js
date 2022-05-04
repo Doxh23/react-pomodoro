@@ -3,8 +3,8 @@ import Button from "./component/Button.js"
 import Counter from './component/Counter.js'
 import Modal from './component/Modal.js'
 export default function app() {
-   const [seconds, setSeconds] = useState(10)
-   const [savesec, setsavesec] = useState(10)
+   const [seconds, setSeconds] = useState(0)
+   const [savesec, setsavesec] = useState(0)
    const [paused, setPaused] = useState(false)
    const div = useRef(0)
    const circle = useRef(1)
